@@ -14,7 +14,7 @@ URL:		http://www.vectaport.com/ivtools/
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	bison >= 1.28
 #BuildRequires:	clippoly-devel
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_prefix	/usr/X11R6
 %define _mandir	/usr/share/man
