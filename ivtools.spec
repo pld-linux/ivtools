@@ -1,7 +1,7 @@
 Summary:	IVTools - graphics editor
 Summary(pl):	IVTools - program graficzny
 Name:		ivtools
-Version:	0.8.1
+Version:	0.8.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
