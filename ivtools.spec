@@ -19,7 +19,7 @@ BuildRequires:	bison >= 1.28
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-IVTools is a suite of free X Windows drawing editors for PostScript,
+IVTools is a suite of free X Window drawing editors for PostScript,
 TeX, and web graphics production, as well as an embeddable extendable
 vector graphic shell.
 
@@ -103,7 +103,7 @@ install src/include/ivstd/*.h \
 	$RPM_BUILD_ROOT%{_includedir}/ivstd
 
 install src/include/InterViews/Bitmaps/*.bm \
-	 $RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps
+	$RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps
 
 install man/man1/* $RPM_BUILD_ROOT%{_mandir}/man1
 install man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
