@@ -1,12 +1,12 @@
 Summary:	IVTools - graphics editor
 Summary(pl):	IVTools - program graficzny
 Name:		ivtools
-Version:	0.8.4
-Release:	2
+Version:	1.0.7
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.vectaport.com/pub/src/%{name}-%{version}.tgz
-Source1:	http://www.vectaport.com/pub/src/%{name}-doc-0.8.tgz
+Source1:	http://www.vectaport.com/pub/src/%{name}-doc-1.0.4.tgz
 Source2:	http://www.vectaport.com/pub/src/%{name}-0.7.10-html.tgz
 Patch0:		%{name}-sprintf-fix.patch
 URL:		http://www.vectaport.com/ivtools/
@@ -41,7 +41,7 @@ kompilacji przyk³adów, i w³asnych programów u¿ywaj±cych pakietu
 IVTools.
 
 %prep
-%setup -q -n %name-0.8
+%setup -q -n %{name}-1.0
 
 %build
 echo "This package requires clippoly library, but this is still under"
@@ -60,8 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir},%{_mandir}/{man3,man1}}
 %{__make} install
 
-install %{SOURCE1} $RPM_BUILD_DIR/%{name}-0.8/
-install %{SOURCE2} $RPM_BUILD_DIR/%{name}-0.8/
+install %{SOURCE1} $RPM_BUILD_DIR/%{name}-1.0/
+install %{SOURCE2} $RPM_BUILD_DIR/%{name}-1.0/
 
 install bin/LINUX/* $RPM_BUILD_ROOT%{_bindir}
 install lib/LINUX/*%{version}* $RPM_BUILD_ROOT%{_libdir}
