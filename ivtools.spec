@@ -37,7 +37,7 @@ Requires:	%{name} = %{version}
 %description devel
 Development pacakage included all headers file.
 
-%description -l pl devel
+%description devel -l pl
 Pakiet programistyczny, zawiera pliki nag³ówkowe niezbêdne do
 kompilacji przyk³adów, i w³asnych programów u¿ywaj±cych pakietu
 IVTools.
@@ -60,7 +60,7 @@ echo "I can not copmile this libraries."
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir},%{_mandir}/{man3,man1}}
-%{__make} install 
+%{__make} install
 
 install %{SOURCE1} $RPM_BUILD_DIR/%{name}-0.8/
 install %{SOURCE2} $RPM_BUILD_DIR/%{name}-0.8/
@@ -77,7 +77,7 @@ install src/include/IV-2_6/*.h $RPM_BUILD_ROOT%{_includedir}/IV-2_6/
 install -d $RPM_BUILD_ROOT%{_includedir}/IV-2_6/InterViews
 install src/include/IV-2_6/InterViews/*.h \
 	$RPM_BUILD_ROOT%{_includedir}/IV-2_6/InterViews/
-	
+
 (cd $RPM_BUILD_ROOT%{_includedir}/IV-3_1; ln -sf ../InterViews InterViews)
 
 install src/include/IV-X11/*.h $RPM_BUILD_ROOT%{_includedir}/IV-X11/
@@ -88,7 +88,7 @@ install src/include/InterViews/*.h $RPM_BUILD_ROOT%{_includedir}/InterViews/
 install -d $RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps
 install src/include/InterViews/Bitmaps/*.bm \
 	 $RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps/
-	 
+
 install src/include/OS/*.h $RPM_BUILD_ROOT%{_includedir}/OS/
 install src/include/TIFF/*.h $RPM_BUILD_ROOT%{_includedir}/TIFF/
 install src/include/Unidraw/*.h $RPM_BUILD_ROOT%{_includedir}/Unidraw/
