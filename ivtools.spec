@@ -15,8 +15,6 @@ BuildRequires:	bison >= 1.28
 #BuildRequires:	clippoly-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 IVTools is a suite of free X Windows drawing editors for PostScript,
