@@ -55,7 +55,7 @@ echo "I can not copmile this libraried."
 %{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" Makefile
 %{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" Makefiles
 %{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" depend
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
