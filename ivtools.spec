@@ -5,8 +5,6 @@ Version:	0.8.4
 Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
 Source0:	http://www.vectaport.com/pub/src/%{name}-%{version}.tgz
 Source1:	http://www.vectaport.com/pub/src/%{name}-doc-0.8.tgz
 Source2:	http://www.vectaport.com/pub/src/%{name}-0.7.10-html.tgz
@@ -34,8 +32,6 @@ poprzez WWW.
 Summary:	IVToosl development package
 Summary(pl):	Narzêdzia programistyczne dla pakietu IVTools
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
 Requires:	%{name} = %{version}
 
 %description devel
