@@ -25,7 +25,9 @@ and web graphics production, as well as an embeddable extendable vector
 graphic shell.
 
 %description -l pl
-
+IVTools jest prostym edytorem stworzonym do wspó³pracy z narzêdziami
+takimi jak PostScript, TeX, oraz do tworzenia grafik udostêpnianych 
+poprzez WWW.
 
 %package devel
 Summary:	IVToosl development package
@@ -34,22 +36,11 @@ Group:		X11/Application/Graphics
 Group(pl):	X11/Aplikacje/Grafika
 
 %description devel
-
+Development pacakage included all headers file.
 
 %description -l pl devel
-
-
-%package doc
-Summary:	IVtools user manual
-Summary(pl):	IVTools podrêcznik urzytkownika
-Group:		X11/Application/Graphics/Documentation
-Group(pl):	X11/Aplikacje/Grafika/Dokumentacja
-
-%description doc
-
-
-%description -l pl doc
-
+Pakiet programistyczny, zawiera pliki nag³ówkowe niezbêdne do kompilacji
+przyk³adów, i w³asnych programów u¿ywaj±cych pakietu IVTools.
 
 %prep
 %setup -q -n %name-0.8
@@ -142,11 +133,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root) %{_mandir}/man1/*.gz
 %attr(644,root,root) %{_mandir}/man3/*.gz
 
-%files doc
-%defattr(644,root,root,755)
-%doc src/man/refman3.1/refman.PS.gz
-
 %files devel
+%doc src/man/refman3.1/refman.PS.gz
 %defattr(644,root,root,755)
 %{_includedir}/Dispatch
 %{_includedir}/IV-2_6
