@@ -109,9 +109,6 @@ install src/include/ivstd/*.h $RPM_BUILD_ROOT%{_includedir}/ivstd/
 install man/man1/* $RPM_BUILD_ROOT%{_mandir}/man1/
 install man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3/
 
-gzip -9nf src/man/refman3.1/refman.PS \
-	CHANGES* COPYRIGHT MANIFEST* README* VERSION
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -120,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES*.gz COPYRIGHT.gz MANIFEST*.gz README*.gz VERSION.gz
+%doc CHANGES* COPYRIGHT MANIFEST* README* VERSION
 %attr(755,root,root) %{_bindir}/*
 %attr(644,root,root) %{_libdir}/*
 
@@ -129,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc src/man/refman3.1/refman.PS.gz
+%doc src/man/refman3.1/refman.PS
 %defattr(644,root,root,755)
 %{_includedir}/Dispatch
 %{_includedir}/IV-2_6
