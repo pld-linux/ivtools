@@ -52,15 +52,15 @@ echo ""
 echo "I can not copmile this libraried."
 ./configure --prefix=%{_prefix} \
 	--enable-install-relative="yes"
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS" Makefile
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS" Makefiles
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS" depend
+%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" Makefile
+%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" Makefiles
+%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" depend
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir},%{_mandir}/{man3,man1}}
-make install 
+%{__make} install 
 
 install %{SOURCE1} $RPM_BUILD_DIR/%name-0.8/
 install %{SOURCE2} $RPM_BUILD_DIR/%name-0.8/
