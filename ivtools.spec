@@ -5,11 +5,11 @@ Version:	1.0.7
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://www.vectaport.com/pub/src/%{name}-%{version}.tgz
-Source1:	http://www.vectaport.com/pub/src/%{name}-doc-1.0.4.tgz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tgz
+Source1:	http://dl.sourceforge.net/%{name}/%{name}-doc-1.0.4.tgz
 Source2:	http://www.vectaport.com/pub/src/%{name}-0.7.10-html.tgz
 Patch0:		%{name}-sprintf-fix.patch
-URL:		http://www.vectaport.com/ivtools/
+URL:		http://www.ivtools.org/ivtools/index.html
 BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	bison >= 1.28
 #BuildRequires:	clippoly-devel
