@@ -15,7 +15,6 @@ BuildRequires:	bison >= 1.28
 #BuildRequires:	clippoly-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 IVTools is a suite of free X Windows drawing editors for PostScript,
 TeX, and web graphics production, as well as an embeddable extendable
@@ -48,64 +47,63 @@ echo "This package requires clippoly library, but this is still under"
 echo "development."
 echo ""
 echo "I can not copmile this libraries."
-./configure --prefix=%{_prefix} \
+%configure2_13 \
 	--enable-install-relative="yes"
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}" Makefile
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}" Makefiles
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}" depend
-%{__make}
+%{__make} Makefile
+%{__make} Makefiles
+%{__make} depend
+%{__make} \
+	OPTIMIZE_CCFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions" \
+	DEBUG_CCFLAGS="%{?debug:-g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir},%{_mandir}/{man3,man1}}
-%{__make} install
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man{3,1}} \
+	$RPM_BUILD_ROOT%{_includedir}/{Dispatch,IV-2_6,IV-3_1,IV-X11,IV-look} \
+	$RPM_BUILD_ROOT%{_includedir}/{InterViews,OS,TIFF,Unidraw,ivstd} \
+	$RPM_BUILD_ROOT%{_includedir}/{IV-2_6/InterViews,InterViews/Bitmaps} \
+	$RPM_BUILD_ROOT%{_includedir}/Unidraw/{Commands,Components,Graphic,Tools}
 
-install %{SOURCE1} $RPM_BUILD_DIR/%{name}-1.0/
-install %{SOURCE2} $RPM_BUILD_DIR/%{name}-1.0/
+%{__make} install \
+	INSTPGMFLAGS=""
+
+install %{SOURCE1} %{SOURCE2} $RPM_BUILD_DIR/%{name}-1.0/
 
 install bin/LINUX/* $RPM_BUILD_ROOT%{_bindir}
 install lib/LINUX/*%{version}* $RPM_BUILD_ROOT%{_libdir}
 
-install -d $RPM_BUILD_ROOT%{_includedir}/{Dispatch,IV-2_6,IV-3_1,IV-X11,IV-look}
-install -d $RPM_BUILD_ROOT%{_includedir}/{InterViews,OS,TIFF,Unidraw,ivstd}
+install src/include/Dispatch/*.h $RPM_BUILD_ROOT%{_includedir}/Dispatch
 
-install src/include/Dispatch/*.h $RPM_BUILD_ROOT%{_includedir}/Dispatch/
-
-install src/include/IV-2_6/*.h $RPM_BUILD_ROOT%{_includedir}/IV-2_6/
-install -d $RPM_BUILD_ROOT%{_includedir}/IV-2_6/InterViews
+install src/include/IV-2_6/*.h $RPM_BUILD_ROOT%{_includedir}/IV-2_6
 install src/include/IV-2_6/InterViews/*.h \
-	$RPM_BUILD_ROOT%{_includedir}/IV-2_6/InterViews/
+	$RPM_BUILD_ROOT%{_includedir}/IV-2_6/InterViews
 
-(cd $RPM_BUILD_ROOT%{_includedir}/IV-3_1; ln -sf ../InterViews InterViews)
+ln -sf ../InterViews $RPM_BUILD_ROOT%{_includedir}/IV-3_1/InterViews
 
-install src/include/IV-X11/*.h $RPM_BUILD_ROOT%{_includedir}/IV-X11/
+install src/include/IV-X11/*.h $RPM_BUILD_ROOT%{_includedir}/IV-X11
+install src/include/IV-look/*.h $RPM_BUILD_ROOT%{_includedir}/IV-look
 
-install src/include/IV-look/*.h $RPM_BUILD_ROOT%{_includedir}/IV-look/
-
-install src/include/InterViews/*.h $RPM_BUILD_ROOT%{_includedir}/InterViews/
-install -d $RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps
-install src/include/InterViews/Bitmaps/*.bm \
-	 $RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps/
-
-install src/include/OS/*.h $RPM_BUILD_ROOT%{_includedir}/OS/
-install src/include/TIFF/*.h $RPM_BUILD_ROOT%{_includedir}/TIFF/
-install src/include/Unidraw/*.h $RPM_BUILD_ROOT%{_includedir}/Unidraw/
-
-install -d $RPM_BUILD_ROOT%{_includedir}/Unidraw/{Commands,Components,Graphic,Tools}
+install src/include/InterViews/*.h $RPM_BUILD_ROOT%{_includedir}/InterViews
+install src/include/OS/*.h $RPM_BUILD_ROOT%{_includedir}/OS
+install src/include/TIFF/*.h $RPM_BUILD_ROOT%{_includedir}/TIFF
+install src/include/Unidraw/*.h $RPM_BUILD_ROOT%{_includedir}/Unidraw
 
 install src/include/Unidraw/Commands/*.h \
-	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Commands/
+	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Commands
 install src/include/Unidraw/Components/*.h \
-	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Components/
+	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Components
 install src/include/Unidraw/Graphic/*.h \
-	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Graphic/
+	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Graphic
 install src/include/Unidraw/Tools/*.h \
-	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Tools/
+	$RPM_BUILD_ROOT%{_includedir}/Unidraw/Tools
+install src/include/ivstd/*.h \
+	$RPM_BUILD_ROOT%{_includedir}/ivstd
 
-install src/include/ivstd/*.h $RPM_BUILD_ROOT%{_includedir}/ivstd/
+install src/include/InterViews/Bitmaps/*.bm \
+	 $RPM_BUILD_ROOT%{_includedir}/InterViews/Bitmaps
 
-install man/man1/* $RPM_BUILD_ROOT%{_mandir}/man1/
-install man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3/
+install man/man1/* $RPM_BUILD_ROOT%{_mandir}/man1
+install man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -115,17 +113,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES* COPYRIGHT MANIFEST* README* VERSION
+%doc CHANGES* COPYRIGHT MANIFEST* README README.ivmkcm
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_libdir}/*
-
-%attr(644,root,root) %{_mandir}/man1/*
-%attr(644,root,root) %{_mandir}/man3/*
+%{_libdir}/*
+%{_mandir}/man[13]/*
 
 %files devel
 %defattr(644,root,root,755)
 %doc src/man/refman3.1/refman.PS
-%defattr(644,root,root,755)
 %{_includedir}/Dispatch
 %{_includedir}/IV-2_6
 %{_includedir}/IV-3_1
