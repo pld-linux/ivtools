@@ -6,8 +6,11 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tgz
+# Source0-md5:	1f515d219edce6f341a12a999df7781b
 Source1:	http://dl.sourceforge.net/%{name}/%{name}-doc-1.0.4.tgz
+# Source1-md5:	162eff5538d03857be8ec2431b581974
 Source2:	http://www.vectaport.com/pub/src/%{name}-0.7.10-html.tgz
+# Source2-md5:	f73fcb6e15d98ae6a505517158eeb61a
 Patch0:		%{name}-sprintf-fix.patch
 URL:		http://www.ivtools.org/ivtools/index.html
 BuildRequires:	XFree86-devel >= 3.3.5
