@@ -1,0 +1,13 @@
+--- src.org/OS/directory.c	Wed Feb  2 08:56:57 2000
++++ src/OS/directory.c	Wed Mar 22 11:05:32 2000
+@@ -51,10 +51,8 @@
+  */
+ 
+ extern "C" {
+-#if Debian_Potato
+     extern int sprintf __P ((char *__restrict __s,
+                              __const char *__restrict __format, ...));
+-#endif
+     extern uid_t getuid();
+     extern void qsort(
+ 	void*, size_t, size_t, int (*) (const void*, const void*)
