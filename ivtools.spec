@@ -1,12 +1,12 @@
 Summary:	IVTools - graphics editor
 Summary(pl):	IVTools - program graficzny
 Name:		ivtools
-Version:	1.0.7
+Version:	1.1.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tgz
-# Source0-md5:	1f515d219edce6f341a12a999df7781b
+# Source0-md5:	dc9353fb05e36dbd7483eaeabf99fc3d
 Source1:	http://dl.sourceforge.net/%{name}/%{name}-doc-1.0.4.tgz
 # Source1-md5:	162eff5538d03857be8ec2431b581974
 Source2:	http://www.vectaport.com/pub/src/%{name}-0.7.10-html.tgz
@@ -43,7 +43,7 @@ kompilacji przyk³adów, i w³asnych programów u¿ywaj±cych pakietu
 IVTools.
 
 %prep
-%setup -q -n %{name}-1.0
+%setup -q -n %{name}-1.1
 
 %build
 echo "This package requires clippoly library, but this is still under"
@@ -70,7 +70,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man{3,1}} \
 %{__make} install \
 	INSTPGMFLAGS=""
 
-install %{SOURCE1} %{SOURCE2} $RPM_BUILD_DIR/%{name}-1.0/
+install %{SOURCE1} %{SOURCE2} $RPM_BUILD_DIR/%{name}-1.1/
 
 install bin/LINUX/* $RPM_BUILD_ROOT%{_bindir}
 install lib/LINUX/*%{version}* $RPM_BUILD_ROOT%{_libdir}
