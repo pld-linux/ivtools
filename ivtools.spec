@@ -5,9 +5,9 @@ Version:	1.1.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tgz
+Source0:	http://dl.sourceforge.net/ivtools/%{name}-%{version}.tgz
 # Source0-md5:	dc9353fb05e36dbd7483eaeabf99fc3d
-Source1:	http://dl.sourceforge.net/%{name}/%{name}-doc-1.0.4.tgz
+Source1:	http://dl.sourceforge.net/ivtools/%{name}-doc-1.0.4.tgz
 # Source1-md5:	162eff5538d03857be8ec2431b581974
 Source2:	http://www.vectaport.com/pub/src/%{name}-0.7.10-html.tgz
 # Source2-md5:	f73fcb6e15d98ae6a505517158eeb61a
@@ -32,7 +32,7 @@ poprzez WWW.
 Summary:	IVToosl development package
 Summary(pl):	Narzêdzia programistyczne dla pakietu IVTools
 Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development pacakage included all headers file.
