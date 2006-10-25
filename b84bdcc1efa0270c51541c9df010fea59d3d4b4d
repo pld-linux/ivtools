@@ -1,0 +1,5 @@
+- use %configure2_13 in %build,
+- build with -fno-exceptions -fno-rtti (decrease summary libraries size from
+  5.4MB to 3.74MB),
+- removed README.cygwin from %doc (isn't neccessary on Linux),
+- minor changes in %build and %install.
