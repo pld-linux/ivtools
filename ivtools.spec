@@ -1,5 +1,5 @@
 Summary:	IVTools - graphics editor
-Summary(pl):	IVTools - program graficzny
+Summary(pl.UTF-8):   IVTools - program graficzny
 Name:		ivtools
 Version:	1.1.3
 Release:	1
@@ -23,23 +23,23 @@ IVTools is a suite of free X Window drawing editors for PostScript,
 TeX, and web graphics production, as well as an embeddable extendable
 vector graphic shell.
 
-%description -l pl
-IVTools jest prostym edytorem stworzonym do wsp蟪pracy z narz阣ziami
-takimi jak PostScript, TeX, oraz do tworzenia grafik udost阷nianych
+%description -l pl.UTF-8
+IVTools jest prostym edytorem stworzonym do wsp贸艂pracy z narz臋dziami
+takimi jak PostScript, TeX, oraz do tworzenia grafik udost臋pnianych
 poprzez WWW.
 
 %package devel
 Summary:	IVToosl development package
-Summary(pl):	Narz阣zia programistyczne dla pakietu IVTools
+Summary(pl.UTF-8):   Narz臋dzia programistyczne dla pakietu IVTools
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development pacakage included all headers file.
 
-%description devel -l pl
-Pakiet programistyczny, zawiera pliki nag丑wkowe niezb阣ne do
-kompilacji przyk砤d體, i w砤snych program體 u縴waj眂ych pakietu
+%description devel -l pl.UTF-8
+Pakiet programistyczny, zawiera pliki nag艂贸wkowe niezb臋dne do
+kompilacji przyk艂ad贸w, i w艂asnych program贸w u偶ywaj膮cych pakietu
 IVTools.
 
 %prep
