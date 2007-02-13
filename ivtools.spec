@@ -1,5 +1,5 @@
 Summary:	IVTools - graphics editor
-Summary(pl.UTF-8):   IVTools - program graficzny
+Summary(pl.UTF-8):	IVTools - program graficzny
 Name:		ivtools
 Version:	1.1.3
 Release:	1
@@ -30,7 +30,7 @@ poprzez WWW.
 
 %package devel
 Summary:	IVToosl development package
-Summary(pl.UTF-8):   Narzędzia programistyczne dla pakietu IVTools
+Summary(pl.UTF-8):	Narzędzia programistyczne dla pakietu IVTools
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
